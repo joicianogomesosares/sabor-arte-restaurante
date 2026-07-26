@@ -53,77 +53,34 @@
     }, 2200);
   }
 
-  /* ---------- Arte SVG por tema (sem imagens externas) ---------- */
+  /* ---------- Biblioteca de ícones SVG (estilo Lucide, traço fino) ---------- */
 
-  function arteSVG(tema) {
-    switch (tema) {
-      case 'massa':
-        return svgWrap('grad-massa', [
-          '<ellipse cx="60" cy="66" rx="42" ry="14" fill="rgba(0,0,0,.12)"/>',
-          '<g fill="none" stroke="#f2c14e" stroke-width="3" stroke-linecap="round">',
-          '<path d="M24 60 Q45 34 60 44 Q78 55 96 46"/>',
-          '<path d="M26 66 Q48 44 62 52 Q80 62 94 54"/>',
-          '<path d="M28 72 Q46 56 60 60 Q78 68 92 62"/>',
-          '</g>',
-          '<circle cx="52" cy="56" r="6" fill="#c0392b"/>',
-          '<circle cx="74" cy="60" r="5" fill="#c0392b"/>',
-          '<path d="M64 48 q5 -7 12 -3" stroke="#3f8f4f" stroke-width="3" fill="none" stroke-linecap="round"/>'
-        ]);
-      case 'pizza':
-        return svgWrap('grad-pizza', [
-          '<circle cx="60" cy="58" r="38" fill="#e8c48a"/>',
-          '<circle cx="60" cy="58" r="30" fill="#c0392b"/>',
-          '<circle cx="48" cy="50" r="6" fill="#fbe4c4"/>',
-          '<circle cx="70" cy="52" r="7" fill="#fbe4c4"/>',
-          '<circle cx="62" cy="70" r="6" fill="#fbe4c4"/>',
-          '<path d="M52 44 q4 -6 10 -2" stroke="#3f8f4f" stroke-width="3" fill="none" stroke-linecap="round"/>',
-          '<path d="M66 64 q4 -6 10 -2" stroke="#3f8f4f" stroke-width="3" fill="none" stroke-linecap="round"/>'
-        ]);
-      case 'sobremesa':
-        return svgWrap('grad-sobremesa', [
-          '<rect x="38" y="46" width="44" height="34" rx="5" fill="#6b4226"/>',
-          '<rect x="38" y="46" width="44" height="12" rx="5" fill="#f3e2c7"/>',
-          '<rect x="38" y="62" width="44" height="8" fill="#a9713f"/>',
-          '<circle cx="60" cy="40" r="6" fill="#c0392b"/>',
-          '<path d="M60 34 q3 -5 8 -4" stroke="#3f8f4f" stroke-width="2.5" fill="none" stroke-linecap="round"/>'
-        ]);
-      case 'bebida':
-        return svgWrap('grad-bebida', [
-          '<path d="M46 40 L74 40 L68 74 L52 74 Z" fill="rgba(255,255,255,.25)" stroke="#fff5e1" stroke-width="2"/>',
-          '<path d="M49 50 L71 50 L67 70 L53 70 Z" fill="#7d1f2b" opacity="0.85"/>',
-          '<line x1="60" y1="74" x2="60" y2="88" stroke="#fff5e1" stroke-width="3"/>',
-          '<ellipse cx="60" cy="90" rx="12" ry="3" fill="#fff5e1"/>'
-        ]);
-      default: /* entrada */
-        return svgWrap('grad-entrada', [
-          '<ellipse cx="60" cy="64" rx="40" ry="12" fill="rgba(0,0,0,.12)"/>',
-          '<rect x="30" y="52" width="60" height="12" rx="6" fill="#e0a86b"/>',
-          '<circle cx="46" cy="52" r="7" fill="#c0392b"/>',
-          '<circle cx="62" cy="52" r="7" fill="#c0392b"/>',
-          '<circle cx="76" cy="52" r="6" fill="#c0392b"/>',
-          '<path d="M50 44 q5 -7 12 -3" stroke="#3f8f4f" stroke-width="3" fill="none" stroke-linecap="round"/>'
-        ]);
-    }
-  }
+  /* Conteúdo interno de cada ícone; o wrapper é montado por icon(). */
+  const ICON_PATHS = {
+    cart: '<circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>',
+    plus: '<line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>',
+    minus: '<line x1="5" y1="12" x2="19" y2="12"/>',
+    trash: '<polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/>',
+    utensils: '<path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/>',
+    check: '<polyline points="20 6 9 17 4 12"/>',
+    moon: '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>',
+    sun: '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>',
+    star: '<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>'
+  };
 
-  /* Envolve os elementos num SVG com gradiente de fundo temático */
-  function svgWrap(gradId, innerParts) {
-    const cores = {
-      'grad-massa': ['#fff3d6', '#f6d78a'],
-      'grad-pizza': ['#ffe6c2', '#f0b46b'],
-      'grad-sobremesa': ['#f6e2cf', '#d9a679'],
-      'grad-bebida': ['#f3d9c0', '#c98b63'],
-      'grad-entrada': ['#eef3d6', '#c7d68a']
-    };
-    const c = cores[gradId] || ['#eee', '#ccc'];
+  /* Monta o SVG de um ícone. opts: { size, cls, fill } */
+  function icon(nome, opts) {
+    opts = opts || {};
+    const size = opts.size || 20;
+    const cls = 'ic' + (opts.cls ? ' ' + opts.cls : '');
+    const fill = opts.fill || 'none';
+    const stroke = opts.fill && opts.fill !== 'none' ? 'none' : 'currentColor';
+    const sw = stroke === 'none' ? '' : ' stroke-width="2"';
     return (
-      '<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
-      '<defs><linearGradient id="' + gradId + '" x1="0" y1="0" x2="0" y2="1">' +
-      '<stop offset="0%" stop-color="' + c[0] + '"/>' +
-      '<stop offset="100%" stop-color="' + c[1] + '"/></linearGradient></defs>' +
-      '<rect width="120" height="100" fill="url(#' + gradId + ')"/>' +
-      innerParts.join('') +
-      '</svg>'
+      '<svg class="' + cls + '" viewBox="0 0 24 24" width="' + size + '" height="' + size + '" ' +
+      'fill="' + fill + '" stroke="' + stroke + '"' + sw +
+      ' stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+      (ICON_PATHS[nome] || '') + '</svg>'
     );
   }
 
@@ -152,6 +109,35 @@
     });
   }
 
+  /* Escapa aspas e sinais de marcação para uso seguro dentro de atributos */
+  function attr(txt) {
+    return String(txt == null ? '' : txt)
+      .replace(/&/g, '&amp;').replace(/"/g, '&quot;')
+      .replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  /* Topo do cartão: foto real do prato ou, quando não existe foto adequada
+     na pasta assets/img/, um bloco de cor sólida elegante com o nome. */
+  function midiaDoItem(p) {
+    const tag = '<span class="menu-tag">' + p.categoria + '</span>';
+    if (p.foto) {
+      return (
+        '<div class="menu-card-media">' +
+        '<img class="menu-card-img" src="assets/img/' + attr(p.foto) + '" ' +
+        'alt="' + attr(p.fotoAlt) + '" width="480" height="360" ' +
+        'loading="lazy" decoding="async" />' +
+        tag +
+        '</div>'
+      );
+    }
+    return (
+      '<div class="menu-card-media menu-card-cor" data-tom="' + attr(p.tom || p.tema) + '">' +
+      '<span class="menu-card-cor-nome" aria-hidden="true">' + p.nome + '</span>' +
+      tag +
+      '</div>'
+    );
+  }
+
   function montarCardapio() {
     const grid = document.getElementById('menuGrid');
     if (!grid) return;
@@ -162,15 +148,15 @@
     grid.innerHTML = itens.map(function (p) {
       return (
         '<article class="menu-card">' +
-        '<div class="menu-card-art">' + arteSVG(p.tema) + '</div>' +
+        midiaDoItem(p) +
         '<div class="menu-card-body">' +
         '<div class="menu-card-head">' +
         '<h3>' + p.nome + '</h3>' +
         '<span class="menu-price">' + formatarBRL(p.preco) + '</span>' +
         '</div>' +
-        '<span class="menu-tag">' + p.categoria + '</span>' +
         '<p class="menu-desc">' + p.desc + '</p>' +
-        '<button class="btn btn-primary btn-add" data-add="' + p.id + '">Adicionar ao pedido</button>' +
+        '<button class="btn btn-primary btn-add" data-add="' + p.id + '">' +
+        icon('plus', { size: 18 }) + 'Adicionar ao pedido</button>' +
         '</div>' +
         '</article>'
       );
@@ -241,7 +227,8 @@
     if (body) {
       const ids = Object.keys(carrinho);
       if (ids.length === 0) {
-        body.innerHTML = '<div class="cart-empty"><span aria-hidden="true">🍽️</span>' +
+        body.innerHTML = '<div class="cart-empty"><span class="cart-empty-ic" aria-hidden="true">' +
+          icon('utensils', { size: 34 }) + '</span>' +
           '<p>Seu carrinho está vazio.</p><small>Adicione itens do cardápio para começar.</small></div>';
       } else {
         body.innerHTML = ids.map(function (id) {
@@ -250,15 +237,14 @@
           const q = carrinho[id];
           return (
             '<div class="cart-item">' +
-            '<div class="cart-item-art">' + arteSVG(item.tema) + '</div>' +
             '<div class="cart-item-info">' +
             '<strong>' + item.nome + '</strong>' +
             '<span class="cart-item-price">' + formatarBRL(item.preco) + '</span>' +
             '<div class="qty">' +
-            '<button aria-label="Diminuir quantidade" data-dec="' + id + '">−</button>' +
+            '<button aria-label="Diminuir quantidade" data-dec="' + id + '">' + icon('minus', { size: 15 }) + '</button>' +
             '<span aria-live="polite">' + q + '</span>' +
-            '<button aria-label="Aumentar quantidade" data-inc="' + id + '">+</button>' +
-            '<button class="cart-item-remove" aria-label="Remover item" data-rem="' + id + '">🗑️</button>' +
+            '<button aria-label="Aumentar quantidade" data-inc="' + id + '">' + icon('plus', { size: 15 }) + '</button>' +
+            '<button class="cart-item-remove" aria-label="Remover item" data-rem="' + id + '">' + icon('trash', { size: 16 }) + '</button>' +
             '</div>' +
             '</div>' +
             '<div class="cart-item-sub">' + formatarBRL(item.preco * q) + '</div>' +
@@ -342,11 +328,10 @@
     const grid = document.getElementById('galleryGrid');
     if (!grid) return;
     grid.innerHTML = GALERIA.map(function (g) {
-      const item = itemPorId(g.id);
-      const tema = item ? item.tema : 'massa';
       return (
         '<figure class="gallery-card">' +
-        '<div class="gallery-art">' + arteSVG(tema) + '</div>' +
+        '<img class="gallery-img" src="assets/img/' + g.img + '" alt="' + g.alt + '" ' +
+        'width="480" height="360" loading="lazy" />' +
         '<figcaption>' + g.legenda + '</figcaption>' +
         '</figure>'
       );
@@ -357,7 +342,11 @@
 
   function estrelas(n) {
     let s = '';
-    for (let i = 0; i < 5; i++) s += i < n ? '★' : '☆';
+    for (let i = 0; i < 5; i++) {
+      s += i < n
+        ? icon('star', { size: 18, fill: 'currentColor', cls: 'star-fill' })
+        : icon('star', { size: 18, fill: 'none', cls: 'star-empty' });
+    }
     return s;
   }
 
@@ -365,12 +354,14 @@
     const wrap = document.getElementById('testimonials');
     if (!wrap) return;
     wrap.innerHTML = DEPOIMENTOS.map(function (d) {
-      const iniciais = d.nome.split(' ').map(function (x) { return x[0]; }).slice(0, 2).join('');
       return (
         '<blockquote class="testimonial">' +
         '<div class="stars" aria-label="Nota ' + d.nota + ' de 5">' + estrelas(d.nota) + '</div>' +
         '<p>“' + d.texto + '”</p>' +
-        '<footer><span class="avatar" aria-hidden="true">' + iniciais + '</span>' +
+        '<footer>' +
+        '<img class="avatar" src="assets/img/pessoas/' + attr(d.foto) + '" ' +
+        'alt="' + attr(d.fotoAlt) + '" width="96" height="96" ' +
+        'loading="lazy" decoding="async" />' +
         '<span><strong>' + d.nome + '</strong><small>' + d.local + '</small></span></footer>' +
         '</blockquote>'
       );
@@ -507,7 +498,8 @@
       salvarReservas(reservas);
       renderReservas();
 
-      feedback.innerHTML = '✅ Reserva confirmada para <strong>' + reserva.nome +
+      feedback.innerHTML = '<span class="feedback-ic" aria-hidden="true">' + icon('check', { size: 18 }) +
+        '</span> Reserva confirmada para <strong>' + reserva.nome +
         '</strong> em <strong>' + formatarData(reserva.data) + '</strong> às <strong>' +
         reserva.hora + '</strong> · ' + reserva.pessoas + ' pessoa(s).';
       feedback.className = 'form-feedback is-success';
@@ -515,7 +507,7 @@
       form.reset();
       if (dataInput) dataInput.min = dataInput.min; // mantém min
       document.getElementById('resPessoas').value = '2';
-      toast('Reserva confirmada! 🍷');
+      toast('Reserva confirmada!');
     });
   }
 
@@ -523,8 +515,8 @@
 
   function aplicarTema(tema) {
     document.documentElement.setAttribute('data-theme', tema);
-    const icon = document.querySelector('#themeToggle .theme-icon');
-    if (icon) icon.textContent = tema === 'dark' ? '☀️' : '🌙';
+    const ico = document.querySelector('#themeToggle .theme-icon');
+    if (ico) ico.innerHTML = tema === 'dark' ? icon('sun', { size: 20 }) : icon('moon', { size: 20 });
     try { localStorage.setItem(LS_TEMA, tema); } catch (e) {}
   }
 
@@ -594,7 +586,7 @@
     document.getElementById('orderConfirmBtn').addEventListener('click', function () {
       fecharModalPedido();
       esvaziarCarrinho();
-      toast('Pedido enviado à cozinha! Buon appetito 🍝');
+      toast('Pedido enviado à cozinha! Buon appetito');
     });
     document.getElementById('orderModal').addEventListener('click', function (e) {
       if (e.target === this) fecharModalPedido();

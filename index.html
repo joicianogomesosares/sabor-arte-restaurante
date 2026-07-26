@@ -6,7 +6,7 @@
   <meta name="description" content="Sabor & Arte — cantina italiana autêntica. Massas artesanais, pizzas na lenha e sobremesas clássicas. Faça seu pedido ou reserve sua mesa." />
   <meta name="theme-color" content="#9e2b25" />
   <title>Sabor &amp; Arte — Cantina Italiana</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%9D%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%239e2b25'/%3E%3Cg fill='none' stroke='%23fff' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M30 22v26c0 4 4 7 8 7s8-3 8-7V22'/%3E%3Cpath d='M38 22v56'/%3E%3Cpath d='M74 56V22a18 18 0 0 0-18 18v14c0 4 3 7 7 7h11v0m0 0v34'/%3E%3C/g%3E%3C/svg%3E" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -14,7 +14,9 @@
   <header class="site-header" id="topo">
     <div class="container header-inner">
       <a href="#topo" class="brand" aria-label="Sabor e Arte, página inicial">
-        <span class="brand-mark" aria-hidden="true">🍝</span>
+        <span class="brand-mark" aria-hidden="true">
+          <svg class="ic" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
+        </span>
         <span class="brand-text">
           <span class="brand-name">Sabor &amp; Arte</span>
           <span class="brand-sub">Cantina Italiana</span>
@@ -37,10 +39,10 @@
 
       <div class="header-actions">
         <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema claro e escuro" title="Alternar tema">
-          <span class="theme-icon" aria-hidden="true">🌙</span>
+          <span class="theme-icon" aria-hidden="true"></span>
         </button>
         <button class="cart-button" id="cartButton" aria-label="Abrir carrinho de pedido">
-          <span aria-hidden="true">🛒</span>
+          <svg class="ic" viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
           <span class="cart-count" id="cartCount">0</span>
         </button>
       </div>
@@ -50,23 +52,9 @@
   <main>
     <!-- ==================== HERO ==================== -->
     <section class="hero" aria-label="Boas-vindas">
-      <div class="hero-bg" aria-hidden="true">
-        <!-- Textura decorativa em SVG (sem imagem externa) -->
-        <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" class="hero-svg">
-          <defs>
-            <radialGradient id="glow" cx="30%" cy="25%" r="80%">
-              <stop offset="0%" stop-color="rgba(255,196,120,.35)" />
-              <stop offset="100%" stop-color="rgba(255,196,120,0)" />
-            </radialGradient>
-          </defs>
-          <rect width="800" height="600" fill="url(#glow)" />
-          <g fill="none" stroke="rgba(255,255,255,.06)" stroke-width="2">
-            <circle cx="650" cy="120" r="90" />
-            <circle cx="650" cy="120" r="140" />
-            <circle cx="120" cy="480" r="70" />
-            <circle cx="120" cy="480" r="110" />
-          </g>
-        </svg>
+      <div class="hero-media">
+        <img class="hero-img" src="assets/img/hero.jpg" alt="Pizzas artesanais recém-saídas do forno servidas em tábua de madeira" />
+        <div class="hero-overlay" aria-hidden="true"></div>
       </div>
 
       <div class="container hero-inner">
@@ -77,14 +65,29 @@
           pizzas assadas em forno a lenha. Uma verdadeira cantina italiana no coração da cidade.
         </p>
         <div class="hero-cta">
-          <a href="#cardapio" class="btn btn-primary btn-lg">Ver cardápio</a>
-          <a href="#reserva" class="btn btn-ghost btn-lg">Reservar mesa</a>
+          <a href="#cardapio" class="btn btn-primary btn-lg">
+            <svg class="ic" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
+            Ver cardápio
+          </a>
+          <a href="#reserva" class="btn btn-ghost btn-lg">
+            <svg class="ic" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Reservar mesa
+          </a>
         </div>
 
         <ul class="hero-badges" aria-label="Destaques">
-          <li><strong>⭐ 4,9</strong><span>1.240 avaliações</span></li>
-          <li><strong>🕑 Aberto</strong><span>até 23h hoje</span></li>
-          <li><strong>👨‍🍳 35 anos</strong><span>de tradição</span></li>
+          <li>
+            <span class="badge-ic" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+            <span class="badge-text"><strong>4,9</strong><span>1.240 avaliações</span></span>
+          </li>
+          <li>
+            <span class="badge-ic" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+            <span class="badge-text"><strong>Aberto</strong><span>até 23h hoje</span></span>
+          </li>
+          <li>
+            <span class="badge-ic" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 12.9 17 22l-5-3-5 3 1.5-9.1"/></svg></span>
+            <span class="badge-text"><strong>35 anos</strong><span>de tradição</span></span>
+          </li>
         </ul>
       </div>
     </section>
@@ -92,23 +95,15 @@
     <!-- ==================== SOBRE ==================== -->
     <section class="section" id="sobre" aria-labelledby="sobre-titulo">
       <div class="container about-grid">
-        <div class="about-art" aria-hidden="true">
-          <!-- Ilustração CSS/SVG de um prato de massa -->
-          <div class="dish-illustration">
-            <svg viewBox="0 0 240 240" role="img" aria-label="Ilustração de um prato de massa">
-              <circle cx="120" cy="120" r="110" class="plate-outer" />
-              <circle cx="120" cy="120" r="86" class="plate-inner" />
-              <g class="pasta">
-                <path d="M60 120 q20 -40 60 -30 q40 10 60 30" />
-                <path d="M62 132 q30 -30 58 -22 q35 8 58 22" />
-                <path d="M64 108 q28 -30 56 -24 q40 6 56 24" />
-                <path d="M70 142 q26 -18 50 -14 q34 6 50 14" />
-              </g>
-              <circle cx="105" cy="112" r="10" class="tomato" />
-              <circle cx="140" cy="128" r="8" class="tomato" />
-              <path d="M118 100 q6 -8 14 -2" class="basil" />
-            </svg>
-          </div>
+        <div class="about-art">
+          <figure class="about-figure">
+            <img class="about-img" src="assets/img/interior.jpg" width="640" height="760" loading="lazy"
+              alt="Cliente saboreando um espaguete com uma taça de vinho branco no salão do restaurante" />
+            <figcaption class="about-figure-badge">
+              <svg class="ic" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.5 12.9 17 22l-5-3-5 3 1.5-9.1"/></svg>
+              <span><strong>Desde 1987</strong>Tradição napolitana</span>
+            </figcaption>
+          </figure>
         </div>
         <div class="about-text">
           <p class="eyebrow">A nossa história</p>
@@ -123,19 +118,35 @@
             e o forno a lenha nunca apaga. Cada visita é um convite para se sentir em família.
           </p>
           <ul class="about-features">
-            <li><span aria-hidden="true">🌿</span> Ingredientes frescos e selecionados</li>
-            <li><span aria-hidden="true">🔥</span> Forno a lenha tradicional</li>
-            <li><span aria-hidden="true">🍷</span> Carta de vinhos italianos</li>
-            <li><span aria-hidden="true">🧑‍🍳</span> Massa artesanal feita na hora</li>
+            <li>
+              <img class="feature-thumb" src="assets/img/pratos/bruschetta.jpg" width="112" height="112" loading="lazy" decoding="async"
+                alt="Tomate picado, manjericão e azeitonas frescos sobre pão italiano tostado" />
+              Ingredientes frescos e selecionados
+            </li>
+            <li>
+              <img class="feature-thumb feature-thumb--pizza" src="assets/img/pizza.jpg" width="112" height="112" loading="lazy" decoding="async"
+                alt="Pizza de salame com azeitonas e borda dourada saída do forno a lenha" />
+              Forno a lenha tradicional
+            </li>
+            <li>
+              <img class="feature-thumb feature-thumb--vinho" src="assets/img/interior.jpg" width="112" height="112" loading="lazy" decoding="async"
+                alt="Taça de vinho branco servida à mesa do salão da cantina" />
+              Carta de vinhos italianos
+            </li>
+            <li>
+              <img class="feature-thumb feature-thumb--massa" src="assets/img/pratos/massa.jpg" width="112" height="112" loading="lazy" decoding="async"
+                alt="Espaguete artesanal ao molho cremoso servido em prato fundo" />
+              Massa artesanal feita na hora
+            </li>
           </ul>
 
           <div class="info-cards">
             <div class="info-card">
-              <h3>🕑 Horário</h3>
+              <h3><svg class="ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Horário</h3>
               <p>Ter a Dom · 12h às 15h<br />e 19h às 23h<br /><small>Segunda: fechado</small></p>
             </div>
             <div class="info-card">
-              <h3>📍 Localização</h3>
+              <h3><svg class="ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Localização</h3>
               <p>Rua das Oliveiras, 240<br />Bella Vista · São Paulo<br /><small>Vagas com manobrista</small></p>
             </div>
           </div>
@@ -182,7 +193,10 @@
             </g>
             <text x="400" y="118" class="map-here" text-anchor="middle">Sabor &amp; Arte</text>
           </svg>
-          <a class="btn btn-outline map-btn" href="https://www.openstreetmap.org/search?query=Bela%20Vista%20S%C3%A3o%20Paulo" target="_blank" rel="noopener noreferrer">Abrir rota no mapa ↗</a>
+          <a class="btn btn-outline map-btn" href="https://www.openstreetmap.org/search?query=Bela%20Vista%20S%C3%A3o%20Paulo" target="_blank" rel="noopener noreferrer">
+            Abrir rota no mapa
+            <svg class="ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
         </div>
       </div>
     </section>
@@ -211,7 +225,7 @@
       <div class="container">
         <p class="eyebrow center">Feito com arte</p>
         <h2 id="galeria-titulo" class="center">Galeria de pratos</h2>
-        <p class="section-lead center">Ilustrações criadas em SVG e CSS — sem uma única imagem externa.</p>
+        <p class="section-lead center">Um passeio pela nossa cozinha: pizzas na lenha, massas frescas e o ambiente da casa.</p>
         <div class="gallery-grid" id="galleryGrid">
           <!-- Cartões inseridos via JS -->
         </div>
@@ -240,9 +254,18 @@
             entre em contato pelo telefone para um atendimento personalizado.
           </p>
           <ul class="reserve-perks">
-            <li><span aria-hidden="true">✔️</span> Confirmação imediata</li>
-            <li><span aria-hidden="true">✔️</span> Sem taxa de reserva</li>
-            <li><span aria-hidden="true">✔️</span> Cancelamento gratuito</li>
+            <li>
+              <span class="perk-ic" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Confirmação imediata
+            </li>
+            <li>
+              <span class="perk-ic" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Sem taxa de reserva
+            </li>
+            <li>
+              <span class="perk-ic" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Cancelamento gratuito
+            </li>
           </ul>
 
           <div class="reservas-salvas" id="reservasSalvas" hidden>
@@ -295,7 +318,10 @@
             <textarea id="resObs" name="obs" rows="2" placeholder="Aniversário, restrições alimentares, cadeirinha infantil..."></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary btn-block">Confirmar reserva</button>
+          <button type="submit" class="btn btn-primary btn-block">
+            <svg class="ic" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Confirmar reserva
+          </button>
           <p class="form-feedback" id="reserveFeedback" role="status" aria-live="polite"></p>
         </form>
       </div>
@@ -307,7 +333,9 @@
     <div class="container footer-grid">
       <div class="footer-col">
         <div class="brand footer-brand">
-          <span class="brand-mark" aria-hidden="true">🍝</span>
+          <span class="brand-mark" aria-hidden="true">
+            <svg class="ic" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
+          </span>
           <span class="brand-text">
             <span class="brand-name">Sabor &amp; Arte</span>
             <span class="brand-sub">Cantina Italiana</span>
@@ -315,19 +343,36 @@
         </div>
         <p class="footer-about">Massas artesanais, pizzas na lenha e o carinho da cozinha italiana desde 1987.</p>
         <div class="socials" aria-label="Redes sociais">
-          <a href="#" aria-label="Instagram" title="Instagram">📷</a>
-          <a href="#" aria-label="Facebook" title="Facebook">📘</a>
-          <a href="#" aria-label="WhatsApp" title="WhatsApp">💬</a>
-          <a href="#" aria-label="TikTok" title="TikTok">🎵</a>
+          <a href="#" aria-label="Instagram" title="Instagram">
+            <svg class="ic" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook" title="Facebook">
+            <svg class="ic" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="WhatsApp" title="WhatsApp">
+            <svg class="ic" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z"/></svg>
+          </a>
+          <a href="#" aria-label="TikTok" title="TikTok">
+            <svg class="ic" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+          </a>
         </div>
       </div>
 
       <div class="footer-col">
         <h3>Contato</h3>
-        <ul class="footer-list">
-          <li>📍 Rua das Oliveiras, 240 — Bella Vista, SP</li>
-          <li>📞 <a href="tel:+551130001234">(11) 3000-1234</a></li>
-          <li>✉️ <a href="mailto:contato@saborearte.com.br">contato@saborearte.com.br</a></li>
+        <ul class="footer-list footer-contact">
+          <li>
+            <svg class="ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Rua das Oliveiras, 240 — Bella Vista, SP</span>
+          </li>
+          <li>
+            <svg class="ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="tel:+551130001234">(11) 3000-1234</a>
+          </li>
+          <li>
+            <svg class="ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:contato@saborearte.com.br">contato@saborearte.com.br</a>
+          </li>
         </ul>
       </div>
 
@@ -353,7 +398,7 @@
     </div>
     <div class="footer-bottom container">
       <p>© <span id="ano"></span> Sabor &amp; Arte. Todos os direitos reservados.</p>
-      <p>Feito com 🍅 por <strong>Joiciano Gomes</strong></p>
+      <p>Feito com dedicação por <strong>Joiciano Gomes</strong></p>
     </div>
   </footer>
 
@@ -362,7 +407,9 @@
   <aside class="cart-drawer" id="cartDrawer" aria-label="Carrinho de pedido" aria-hidden="true">
     <div class="cart-head">
       <h2>Seu pedido</h2>
-      <button class="cart-close" id="cartClose" aria-label="Fechar carrinho">✕</button>
+      <button class="cart-close" id="cartClose" aria-label="Fechar carrinho">
+        <svg class="ic" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
     </div>
     <div class="cart-body" id="cartBody">
       <!-- Itens inseridos via JS -->
@@ -379,12 +426,16 @@
   <!-- ==================== MODAL RESUMO DO PEDIDO ==================== -->
   <div class="modal-overlay" id="orderModal" hidden>
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="orderModalTitle">
-      <button class="modal-close" id="orderModalClose" aria-label="Fechar">✕</button>
-      <div class="modal-icon" aria-hidden="true">🎉</div>
+      <button class="modal-close" id="orderModalClose" aria-label="Fechar">
+        <svg class="ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="modal-icon" aria-hidden="true">
+        <svg class="ic" viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
       <h2 id="orderModalTitle">Resumo do pedido</h2>
       <p class="modal-sub">Confira os itens abaixo. Esta é uma demonstração — nenhum pagamento é processado.</p>
       <div class="order-summary" id="orderSummary"></div>
-      <p class="modal-note">Um garçom levará seu pedido à mesa em instantes. 🍷</p>
+      <p class="modal-note">Um garçom levará seu pedido à mesa em instantes. Buon appetito!</p>
       <button class="btn btn-primary btn-block" id="orderConfirmBtn">Entendi, obrigado!</button>
     </div>
   </div>
