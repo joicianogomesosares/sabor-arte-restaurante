@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sabor & Arte — cantina italiana autêntica. Massas artesanais, pizzas na lenha e sobremesas clássicas. Faça seu pedido ou reserve sua mesa." />
+  <meta name="theme-color" content="#9e2b25" />
+  <title>Sabor &amp; Arte — Cantina Italiana</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%9D%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- ==================== CABEÇALHO / NAV ==================== -->
+  <header class="site-header" id="topo">
+    <div class="container header-inner">
+      <a href="#topo" class="brand" aria-label="Sabor e Arte, página inicial">
+        <span class="brand-mark" aria-hidden="true">🍝</span>
+        <span class="brand-text">
+          <span class="brand-name">Sabor &amp; Arte</span>
+          <span class="brand-sub">Cantina Italiana</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" aria-label="Navegação principal">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menu de navegação">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#cardapio">Cardápio</a></li>
+          <li><a href="#galeria">Galeria</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a href="#reserva">Reservas</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema claro e escuro" title="Alternar tema">
+          <span class="theme-icon" aria-hidden="true">🌙</span>
+        </button>
+        <button class="cart-button" id="cartButton" aria-label="Abrir carrinho de pedido">
+          <span aria-hidden="true">🛒</span>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" aria-label="Boas-vindas">
+      <div class="hero-bg" aria-hidden="true">
+        <!-- Textura decorativa em SVG (sem imagem externa) -->
+        <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" class="hero-svg">
+          <defs>
+            <radialGradient id="glow" cx="30%" cy="25%" r="80%">
+              <stop offset="0%" stop-color="rgba(255,196,120,.35)" />
+              <stop offset="100%" stop-color="rgba(255,196,120,0)" />
+            </radialGradient>
+          </defs>
+          <rect width="800" height="600" fill="url(#glow)" />
+          <g fill="none" stroke="rgba(255,255,255,.06)" stroke-width="2">
+            <circle cx="650" cy="120" r="90" />
+            <circle cx="650" cy="120" r="140" />
+            <circle cx="120" cy="480" r="70" />
+            <circle cx="120" cy="480" r="110" />
+          </g>
+        </svg>
+      </div>
+
+      <div class="container hero-inner">
+        <p class="hero-eyebrow">Desde 1987 · Bella Vista, São Paulo</p>
+        <h1 class="hero-title">Onde cada prato é<br /><span>uma obra de arte</span></h1>
+        <p class="hero-lead">
+          Massas frescas feitas à mão todos os dias, molhos de receita de família e
+          pizzas assadas em forno a lenha. Uma verdadeira cantina italiana no coração da cidade.
+        </p>
+        <div class="hero-cta">
+          <a href="#cardapio" class="btn btn-primary btn-lg">Ver cardápio</a>
+          <a href="#reserva" class="btn btn-ghost btn-lg">Reservar mesa</a>
+        </div>
+
+        <ul class="hero-badges" aria-label="Destaques">
+          <li><strong>⭐ 4,9</strong><span>1.240 avaliações</span></li>
+          <li><strong>🕑 Aberto</strong><span>até 23h hoje</span></li>
+          <li><strong>👨‍🍳 35 anos</strong><span>de tradição</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================== SOBRE ==================== -->
+    <section class="section" id="sobre" aria-labelledby="sobre-titulo">
+      <div class="container about-grid">
+        <div class="about-art" aria-hidden="true">
+          <!-- Ilustração CSS/SVG de um prato de massa -->
+          <div class="dish-illustration">
+            <svg viewBox="0 0 240 240" role="img" aria-label="Ilustração de um prato de massa">
+              <circle cx="120" cy="120" r="110" class="plate-outer" />
+              <circle cx="120" cy="120" r="86" class="plate-inner" />
+              <g class="pasta">
+                <path d="M60 120 q20 -40 60 -30 q40 10 60 30" />
+                <path d="M62 132 q30 -30 58 -22 q35 8 58 22" />
+                <path d="M64 108 q28 -30 56 -24 q40 6 56 24" />
+                <path d="M70 142 q26 -18 50 -14 q34 6 50 14" />
+              </g>
+              <circle cx="105" cy="112" r="10" class="tomato" />
+              <circle cx="140" cy="128" r="8" class="tomato" />
+              <path d="M118 100 q6 -8 14 -2" class="basil" />
+            </svg>
+          </div>
+        </div>
+        <div class="about-text">
+          <p class="eyebrow">A nossa história</p>
+          <h2 id="sobre-titulo">Tradição italiana servida com afeto</h2>
+          <p>
+            A <strong>Sabor &amp; Arte</strong> nasceu em 1987, quando a família Bianchi trouxe
+            de Nápoles as receitas que passavam de geração em geração. Hoje, três décadas depois,
+            continuamos fiéis ao mesmo princípio: ingredientes frescos, tempo e paixão.
+          </p>
+          <p>
+            Nossa massa é feita diariamente na casa, o molho de tomate cozinha lentamente por horas
+            e o forno a lenha nunca apaga. Cada visita é um convite para se sentir em família.
+          </p>
+          <ul class="about-features">
+            <li><span aria-hidden="true">🌿</span> Ingredientes frescos e selecionados</li>
+            <li><span aria-hidden="true">🔥</span> Forno a lenha tradicional</li>
+            <li><span aria-hidden="true">🍷</span> Carta de vinhos italianos</li>
+            <li><span aria-hidden="true">🧑‍🍳</span> Massa artesanal feita na hora</li>
+          </ul>
+
+          <div class="info-cards">
+            <div class="info-card">
+              <h3>🕑 Horário</h3>
+              <p>Ter a Dom · 12h às 15h<br />e 19h às 23h<br /><small>Segunda: fechado</small></p>
+            </div>
+            <div class="info-card">
+              <h3>📍 Localização</h3>
+              <p>Rua das Oliveiras, 240<br />Bella Vista · São Paulo<br /><small>Vagas com manobrista</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== MAPA SIMULADO ==================== -->
+    <section class="section section-tight" aria-labelledby="mapa-titulo">
+      <div class="container">
+        <p class="eyebrow center">Como chegar</p>
+        <h2 id="mapa-titulo" class="center">No coração da Bella Vista</h2>
+        <div class="map-wrap">
+          <!-- Mapa 100% simulado em SVG, sem API externa -->
+          <svg viewBox="0 0 800 360" class="map-svg" role="img" aria-label="Mapa ilustrativo mostrando a localização do restaurante na Rua das Oliveiras">
+            <rect width="800" height="360" class="map-bg" />
+            <!-- Quarteirões -->
+            <g class="map-block">
+              <rect x="40" y="40" width="180" height="110" rx="6" />
+              <rect x="260" y="40" width="220" height="110" rx="6" />
+              <rect x="520" y="40" width="240" height="110" rx="6" />
+              <rect x="40" y="210" width="180" height="110" rx="6" />
+              <rect x="260" y="210" width="220" height="110" rx="6" />
+              <rect x="520" y="210" width="240" height="110" rx="6" />
+            </g>
+            <!-- Ruas -->
+            <g class="map-road">
+              <rect x="0" y="160" width="800" height="40" />
+              <rect x="228" y="0" width="24" height="360" />
+              <rect x="488" y="0" width="24" height="360" />
+            </g>
+            <g class="map-road-line">
+              <line x1="0" y1="180" x2="800" y2="180" />
+            </g>
+            <!-- Parque -->
+            <rect x="600" y="230" width="120" height="70" rx="10" class="map-park" />
+            <text x="660" y="270" class="map-label" text-anchor="middle">Praça Verde</text>
+            <!-- Rótulo da rua -->
+            <text x="400" y="150" class="map-street" text-anchor="middle">Rua das Oliveiras</text>
+            <!-- Pino do restaurante -->
+            <g class="map-pin" transform="translate(388,150)">
+              <path d="M12 0 C4 0 -3 7 -3 15 C-3 26 12 40 12 40 C12 40 27 26 27 15 C27 7 20 0 12 0 Z" />
+              <circle cx="12" cy="15" r="7" class="map-pin-dot" />
+            </g>
+            <text x="400" y="118" class="map-here" text-anchor="middle">Sabor &amp; Arte</text>
+          </svg>
+          <a class="btn btn-outline map-btn" href="https://www.openstreetmap.org/search?query=Bela%20Vista%20S%C3%A3o%20Paulo" target="_blank" rel="noopener noreferrer">Abrir rota no mapa ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CARDÁPIO ==================== -->
+    <section class="section section-alt" id="cardapio" aria-labelledby="cardapio-titulo">
+      <div class="container">
+        <p class="eyebrow center">Buon appetito</p>
+        <h2 id="cardapio-titulo" class="center">Nosso cardápio</h2>
+        <p class="section-lead center">
+          Selecione uma categoria e monte seu pedido. Toque em “Adicionar” para incluir o item no carrinho.
+        </p>
+
+        <div class="menu-filters" id="menuFilters" role="tablist" aria-label="Filtrar cardápio por categoria">
+          <!-- Botões de filtro inseridos via JS -->
+        </div>
+
+        <div class="menu-grid" id="menuGrid" aria-live="polite">
+          <!-- Itens inseridos via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== GALERIA ==================== -->
+    <section class="section" id="galeria" aria-labelledby="galeria-titulo">
+      <div class="container">
+        <p class="eyebrow center">Feito com arte</p>
+        <h2 id="galeria-titulo" class="center">Galeria de pratos</h2>
+        <p class="section-lead center">Ilustrações criadas em SVG e CSS — sem uma única imagem externa.</p>
+        <div class="gallery-grid" id="galleryGrid">
+          <!-- Cartões inseridos via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== DEPOIMENTOS ==================== -->
+    <section class="section section-alt" id="depoimentos" aria-labelledby="dep-titulo">
+      <div class="container">
+        <p class="eyebrow center">Quem prova, volta</p>
+        <h2 id="dep-titulo" class="center">O que dizem nossos clientes</h2>
+        <div class="testimonials" id="testimonials">
+          <!-- Cartões inseridos via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== RESERVA ==================== -->
+    <section class="section" id="reserva" aria-labelledby="reserva-titulo">
+      <div class="container reserve-grid">
+        <div class="reserve-intro">
+          <p class="eyebrow">Reserve sua mesa</p>
+          <h2 id="reserva-titulo">Garanta seu lugar à mesa</h2>
+          <p>
+            Preencha o formulário e receba a confirmação na hora. Para grupos acima de 10 pessoas,
+            entre em contato pelo telefone para um atendimento personalizado.
+          </p>
+          <ul class="reserve-perks">
+            <li><span aria-hidden="true">✔️</span> Confirmação imediata</li>
+            <li><span aria-hidden="true">✔️</span> Sem taxa de reserva</li>
+            <li><span aria-hidden="true">✔️</span> Cancelamento gratuito</li>
+          </ul>
+
+          <div class="reservas-salvas" id="reservasSalvas" hidden>
+            <h3>Suas reservas</h3>
+            <ul id="reservasLista"></ul>
+          </div>
+        </div>
+
+        <form class="reserve-form" id="reserveForm" novalidate>
+          <div class="field">
+            <label for="resNome">Nome completo</label>
+            <input type="text" id="resNome" name="nome" autocomplete="name" required minlength="3" placeholder="Ex.: Maria Oliveira" />
+            <span class="error-msg" data-for="resNome"></span>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="resData">Data</label>
+              <input type="date" id="resData" name="data" required />
+              <span class="error-msg" data-for="resData"></span>
+            </div>
+            <div class="field">
+              <label for="resHora">Horário</label>
+              <select id="resHora" name="hora" required>
+                <option value="">Selecione</option>
+                <option>12:00</option><option>12:30</option><option>13:00</option>
+                <option>13:30</option><option>19:00</option><option>19:30</option>
+                <option>20:00</option><option>20:30</option><option>21:00</option>
+                <option>21:30</option>
+              </select>
+              <span class="error-msg" data-for="resHora"></span>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="resPessoas">Nº de pessoas</label>
+              <input type="number" id="resPessoas" name="pessoas" required min="1" max="10" value="2" />
+              <span class="error-msg" data-for="resPessoas"></span>
+            </div>
+            <div class="field">
+              <label for="resTel">Telefone <span class="opt">(opcional)</span></label>
+              <input type="tel" id="resTel" name="telefone" autocomplete="tel" placeholder="(11) 90000-0000" />
+              <span class="error-msg" data-for="resTel"></span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="resObs">Observações <span class="opt">(opcional)</span></label>
+            <textarea id="resObs" name="obs" rows="2" placeholder="Aniversário, restrições alimentares, cadeirinha infantil..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Confirmar reserva</button>
+          <p class="form-feedback" id="reserveFeedback" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== RODAPÉ ==================== -->
+  <footer class="site-footer" id="contato">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <div class="brand footer-brand">
+          <span class="brand-mark" aria-hidden="true">🍝</span>
+          <span class="brand-text">
+            <span class="brand-name">Sabor &amp; Arte</span>
+            <span class="brand-sub">Cantina Italiana</span>
+          </span>
+        </div>
+        <p class="footer-about">Massas artesanais, pizzas na lenha e o carinho da cozinha italiana desde 1987.</p>
+        <div class="socials" aria-label="Redes sociais">
+          <a href="#" aria-label="Instagram" title="Instagram">📷</a>
+          <a href="#" aria-label="Facebook" title="Facebook">📘</a>
+          <a href="#" aria-label="WhatsApp" title="WhatsApp">💬</a>
+          <a href="#" aria-label="TikTok" title="TikTok">🎵</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contato</h3>
+        <ul class="footer-list">
+          <li>📍 Rua das Oliveiras, 240 — Bella Vista, SP</li>
+          <li>📞 <a href="tel:+551130001234">(11) 3000-1234</a></li>
+          <li>✉️ <a href="mailto:contato@saborearte.com.br">contato@saborearte.com.br</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Horário</h3>
+        <ul class="footer-list">
+          <li>Terça a Domingo</li>
+          <li>Almoço: 12h às 15h</li>
+          <li>Jantar: 19h às 23h</li>
+          <li><em>Segunda: fechado</em></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Navegação</h3>
+        <ul class="footer-list">
+          <li><a href="#cardapio">Cardápio</a></li>
+          <li><a href="#reserva">Reservas</a></li>
+          <li><a href="#galeria">Galeria</a></li>
+          <li><a href="#sobre">Sobre nós</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>© <span id="ano"></span> Sabor &amp; Arte. Todos os direitos reservados.</p>
+      <p>Feito com 🍅 por <strong>Joiciano Gomes</strong></p>
+    </div>
+  </footer>
+
+  <!-- ==================== CARRINHO (drawer) ==================== -->
+  <div class="cart-overlay" id="cartOverlay" hidden></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Carrinho de pedido" aria-hidden="true">
+    <div class="cart-head">
+      <h2>Seu pedido</h2>
+      <button class="cart-close" id="cartClose" aria-label="Fechar carrinho">✕</button>
+    </div>
+    <div class="cart-body" id="cartBody">
+      <!-- Itens inseridos via JS -->
+    </div>
+    <div class="cart-foot">
+      <div class="cart-line"><span>Subtotal</span><span id="cartSubtotal">R$ 0,00</span></div>
+      <div class="cart-line"><span>Taxa de serviço (10%)</span><span id="cartService">R$ 0,00</span></div>
+      <div class="cart-line cart-total"><span>Total</span><span id="cartTotal">R$ 0,00</span></div>
+      <button class="btn btn-primary btn-block" id="checkoutBtn" disabled>Finalizar pedido</button>
+      <button class="btn btn-text btn-block" id="clearCartBtn">Esvaziar carrinho</button>
+    </div>
+  </aside>
+
+  <!-- ==================== MODAL RESUMO DO PEDIDO ==================== -->
+  <div class="modal-overlay" id="orderModal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="orderModalTitle">
+      <button class="modal-close" id="orderModalClose" aria-label="Fechar">✕</button>
+      <div class="modal-icon" aria-hidden="true">🎉</div>
+      <h2 id="orderModalTitle">Resumo do pedido</h2>
+      <p class="modal-sub">Confira os itens abaixo. Esta é uma demonstração — nenhum pagamento é processado.</p>
+      <div class="order-summary" id="orderSummary"></div>
+      <p class="modal-note">Um garçom levará seu pedido à mesa em instantes. 🍷</p>
+      <button class="btn btn-primary btn-block" id="orderConfirmBtn">Entendi, obrigado!</button>
+    </div>
+  </div>
+
+  <!-- Notificação (toast) -->
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <!-- Scripts: <script> normais (sem módulos ES) para funcionar em file:// -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
